@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VVVF_Data_Generator.Pages.Settings"
       mc:Ignorable="d" 
-      d:DesignHeight="434" d:DesignWidth="588"
+      d:DesignHeight="434" d:DesignWidth="661"
       Title="mascon_off_setting">
 
     <Grid>

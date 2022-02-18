@@ -433,12 +433,36 @@ namespace VVVF_Data_Generator
         public static Yaml_Sound_Data get_Current_Data() { return current_data; }
         public static void set_Current_Data(Yaml_Sound_Data d) { current_data = d; }
     
-        public static void save_Yaml(String path)
+        public static bool save_Yaml(String path)
         {
-            using TextWriter writer = File.CreateText(path);
-            var serializer = new Serializer();
-            serializer.Serialize(writer, current_data);
-            writer.Close();
+            try
+            {
+                using TextWriter writer = File.CreateText(path);
+                var serializer = new Serializer();
+                serializer.Serialize(writer, current_data);
+                writer.Close();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public static bool load_Yaml(String path)
+        {
+            try
+            {
+                var input = new StreamReader(path, Encoding.UTF8);
+                var deserializer = new Deserializer();
+                Yaml_Sound_Data deserializeObject = deserializer.Deserialize<Yaml_Sound_Data>(input);
+                set_Current_Data(deserializeObject);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
