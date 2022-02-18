@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>VVVF_Yaml_Generator</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>vvvf-yaml-generator.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Settings\2-level.png" />
+    <None Remove="Images\Settings\3-level.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="vvvf-yaml-generator.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Settings\2-level.png" />
+    <Resource Include="Images\Settings\3-level.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="YamlDotNet" Version="11.2.1" />
+  </ItemGroup>
+
+</Project>

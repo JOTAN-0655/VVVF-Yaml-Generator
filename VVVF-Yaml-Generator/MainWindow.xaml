@@ -1,0 +1,36 @@
+﻿<Window x:Class="VVVF_Data_Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VVVF_Data_Generator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="147*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="10,10,16,10">
+            <TabItem Header="Settings">
+                <Grid Background="#FFFFFFFF">
+                    <StackPanel/>
+                    <Button x:Name="settings_level" Content="Level" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="28" Width="161" FontFamily="Arial Rounded MT Bold" FontSize="12" BorderBrush="#FF0012FF" Click="setting_button_Click"/>
+                    <Button x:Name="settings_minimum" Content="Minimum Frequency" HorizontalAlignment="Center" Margin="0,43,0,0" VerticalAlignment="Top" Height="28" Width="161" FontFamily="Arial Rounded MT Bold" BorderBrush="#FF0012FF" Click="setting_button_Click"/>
+                    <Button x:Name="settings_mascon" Content="Mascon Off" HorizontalAlignment="Center" Margin="0,76,0,0" VerticalAlignment="Top" Height="28" Width="161" FontFamily="Arial Rounded MT Bold" BorderBrush="#FF0010FF" Click="setting_button_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Accelerate">
+                <Grid Background="#FFFFFFFF">
+                    <StackPanel/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Brake">
+                <Grid Background="#FFFFFFFF">
+                    <StackPanel/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Frame Grid.Column="1" x:Name="setting_window" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
