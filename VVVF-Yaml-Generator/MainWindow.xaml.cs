@@ -67,5 +67,10 @@ namespace VVVF_Data_Generator
                     MessageBox.Show("Error occurred on saving.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void accelerate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

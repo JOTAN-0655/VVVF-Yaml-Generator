@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace VVVF_Data_Generator.Pages.Settings
         {
             InitializeComponent();
 
-            if (Yaml_Generation.get_Current_Data().level == 2)
+            if (Yaml_Generation.current_data.level == 2)
                 level_image.Source = new BitmapImage(new Uri("../../Images/Settings/2-level.png", UriKind.Relative));
             else
                 level_image.Source = new BitmapImage(new Uri("../../Images/Settings/3-level.png", UriKind.Relative));
@@ -42,7 +43,7 @@ namespace VVVF_Data_Generator.Pages.Settings
             else
                 level_image.Source = new BitmapImage(new Uri("../../Images/Settings/3-level.png", UriKind.Relative));
 
-            Yaml_Generation.get_Current_Data().level = Int32.Parse(tag);
+            Yaml_Generation.current_data.level = Int32.Parse(tag);
         }
     }
 }

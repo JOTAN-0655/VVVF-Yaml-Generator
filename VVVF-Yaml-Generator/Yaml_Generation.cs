@@ -10,14 +10,15 @@ namespace VVVF_Data_Generator
 {
     public class Yaml_Sound_Data
     {
-        private static String get_Value(Object o)
+        private static String get_Value(Object? o)
         {
-            if (o == null) 
+            if (o == null)
+                return "null";
+            String? str = o.ToString();
+            if (str == null) 
                 return "null";
             else
-#pragma warning disable CS8603 // Null 参照戻り値である可能性があります。
-                return o.ToString();
-#pragma warning restore CS8603 // Null 参照戻り値である可能性があります。
+                return str;
         }
         public int level { get; set; } = 2;
         public Yaml_Mascon_Data mascon_data { get; set; } = new Yaml_Mascon_Data();
@@ -83,8 +84,8 @@ namespace VVVF_Data_Generator
 
                 public class Yaml_Mascon_Data_Single
                 {
-                    public int div { get; set; } = 20000;
-                    public double control_freq_go_to { get; set; } = 60;
+                    public int div { get; set; } = -1;
+                    public double control_freq_go_to { get; set; } = -1;
 
                     public override string ToString()
                     {
@@ -429,10 +430,8 @@ namespace VVVF_Data_Generator
     }
     public static class Yaml_Generation
     {
-        private static Yaml_Sound_Data current_data = new Yaml_Sound_Data();
-        public static Yaml_Sound_Data get_Current_Data() { return current_data; }
-        public static void set_Current_Data(Yaml_Sound_Data d) { current_data = d; }
-    
+        public static Yaml_Sound_Data current_data = new Yaml_Sound_Data();
+
         public static bool save_Yaml(String path)
         {
             try
@@ -456,7 +455,7 @@ namespace VVVF_Data_Generator
                 var input = new StreamReader(path, Encoding.UTF8);
                 var deserializer = new Deserializer();
                 Yaml_Sound_Data deserializeObject = deserializer.Deserialize<Yaml_Sound_Data>(input);
-                set_Current_Data(deserializeObject);
+                Yaml_Generation.current_data = deserializeObject;
                 return true;
             }
             catch (Exception)

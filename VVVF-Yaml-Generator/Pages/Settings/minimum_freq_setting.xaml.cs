@@ -24,8 +24,8 @@ namespace VVVF_Data_Generator.Pages.Settings
         {
             InitializeComponent();
 
-            accelerate_min_freq_box.Text = Yaml_Generation.get_Current_Data().min_freq.accelerate.ToString();
-            braking_min_freq_box.Text = Yaml_Generation.get_Current_Data().min_freq.braking.ToString();
+            accelerate_min_freq_box.Text = Yaml_Generation.current_data.min_freq.accelerate.ToString();
+            braking_min_freq_box.Text = Yaml_Generation.current_data.min_freq.braking.ToString();
         }
 
         private void textbox_value_change(object sender, TextChangedEventArgs e)
@@ -41,7 +41,7 @@ namespace VVVF_Data_Generator.Pages.Settings
                     double d = Double.Parse(accelerate_min_freq_box.Text);
                     accelerate_min_freq_box.Background = new BrushConverter().ConvertFrom("#FFFFFFFF") as Brush;
 
-                    Yaml_Generation.get_Current_Data().min_freq.accelerate = d;
+                    Yaml_Generation.current_data.min_freq.accelerate = d;
                 }
                 catch
                 {
@@ -54,7 +54,7 @@ namespace VVVF_Data_Generator.Pages.Settings
                     double d = Double.Parse(braking_min_freq_box.Text);
                     accelerate_min_freq_box.Background = new BrushConverter().ConvertFrom("#FFFFFFFF") as Brush;
 
-                    Yaml_Generation.get_Current_Data().min_freq.braking = d;
+                    Yaml_Generation.current_data.min_freq.braking = d;
                 }
                 catch
                 {
