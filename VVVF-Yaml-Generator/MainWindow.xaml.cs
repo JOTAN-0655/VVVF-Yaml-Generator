@@ -95,8 +95,13 @@ namespace VVVF_Data_Generator
         private void accelerate_setting_load(object sender, RoutedEventArgs e)
         {
             accelerate_settings.ItemsSource = Yaml_Generation.current_data.accelerate_pattern;
+            accelerate_selected_show();
         }
         private void accelerate_settings_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            accelerate_selected_show();
+        }
+        private void accelerate_selected_show()
         {
             int selected = accelerate_settings.SelectedIndex;
             if (selected < 0) return;
@@ -128,9 +133,14 @@ namespace VVVF_Data_Generator
         private void brake_settings_load(object sender, RoutedEventArgs e)
         {
             brake_settings.ItemsSource = Yaml_Generation.current_data.braking_pattern;
+            brake_selected_show();
         }
 
         private void brake_settings_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            brake_selected_show();
+        }
+        private void brake_selected_show()
         {
             int selected = brake_settings.SelectedIndex;
             if (selected < 0) return;
@@ -146,5 +156,6 @@ namespace VVVF_Data_Generator
             brake_settings.Items.Refresh();
         }
 
+        
     }
 }

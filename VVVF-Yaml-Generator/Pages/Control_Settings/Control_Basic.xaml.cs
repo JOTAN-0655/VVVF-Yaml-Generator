@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,21 +88,21 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             CheckBox tb = (CheckBox)sender;
             Object? tag = tb.Tag;
             if (tag == null) return;
+            String? tag_str = tag.ToString();
+            if (tag_str == null) return;
 
-            if (tag.Equals("Normal"))
+            bool check = (tb.IsChecked == false) ? false : true;
+
+            if (tag_str.Equals("Normal"))
             {
-                bool check = true;
-                if (enable_on_normal_check.IsChecked == false) check = false;
                 target.enable_on_not_free_run = check;
-                MainWindow.update_Control_List_View();
             }
             else
             {
-                bool check = true;
-                if (enable_on_free_check.IsChecked == false) check = false;
                 target.enable_on_free_run = check;
-                MainWindow.update_Control_List_View();
             }
+
+            MainWindow.update_Control_List_View();
         }
     }
 }

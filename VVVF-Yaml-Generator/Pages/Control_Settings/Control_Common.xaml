@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VVVF_Yaml_Generator.Pages.Control_Settings"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="661"
+      d:DesignHeight="2200" d:DesignWidth="678"
       Title="Control_Common">
 
     <Grid Background="White">
@@ -13,6 +13,9 @@
             <StackPanel>
                 <Frame Name="Control_Basic" Height="200" NavigationUIVisibility="Hidden"/>
                 <Frame Name="Control_When_FreeRun" Height="150" NavigationUIVisibility="Hidden"/>
+                <Frame Name="Control_Amplitude_Default" Height="300" NavigationUIVisibility="Hidden"/>
+                <Frame x:Name="Control_Amplitude_FreeRun_On" Height="300" NavigationUIVisibility="Hidden"/>
+                <Frame x:Name="Control_Amplitude_FreeRun_Off" Height="300" NavigationUIVisibility="Hidden"/>
             </StackPanel>
         </ScrollViewer>
 

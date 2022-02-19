@@ -16,17 +16,20 @@
             <Label Content="FreeRun Setting" FontSize="16" FontFamily="M PLUS 2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
         </Grid>
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="103*"/>
-                <ColumnDefinition Width="573*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Background="#FF86AEFF">
-                <Label Content="ON" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="103*"/>
+                    <ColumnDefinition Width="573*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Background="#FFA5A5A5">
+                    <Label Content="ON" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
+                </Grid>
+                <Grid Grid.Column="1" Background="White" HorizontalAlignment="Stretch">
+                    <CheckBox x:Name="on_skip" Content="Skip" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="ON_Skip" Unchecked="CheckBox_Checked"/>
+                    <CheckBox x:Name="on_stuck" Content="Stuck at Here" HorizontalAlignment="Right" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="ON_Stuck" Margin="0,0,100,0" Unchecked="CheckBox_Checked"/>
+                </Grid>
             </Grid>
-            <Grid Grid.Column="1" Background="White">
-                <CheckBox Content="Skip" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="ON_Skip"/>
-                <CheckBox Content="Stuck at Here" HorizontalAlignment="Right" Margin="0,0,100,0" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="ON_Stuck"/>
-            </Grid>
+
         </Grid>
         <Grid Grid.Row="2">
             <Grid>
@@ -34,12 +37,12 @@
                     <ColumnDefinition Width="103*"/>
                     <ColumnDefinition Width="573*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Background="#FF86AEFF">
+                <Grid Background="#FFA5A5A5">
                     <Label Content="OFF" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
                 </Grid>
                 <Grid Grid.Column="1" Background="White" HorizontalAlignment="Stretch">
-                    <CheckBox Content="Skip" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="OFF_Skip"/>
-                    <CheckBox Content="Stuck at Here" HorizontalAlignment="Right" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="OFF_Stuck" Margin="0,0,100,0"/>
+                    <CheckBox x:Name="off_skip" Content="Skip" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="OFF_Skip" Unchecked="CheckBox_Checked"/>
+                    <CheckBox x:Name="off_stuck" Content="Stuck at Here" HorizontalAlignment="Right" VerticalAlignment="Center" Checked="CheckBox_Checked" Tag="OFF_Stuck" Margin="0,0,100,0" Unchecked="CheckBox_Checked"/>
                 </Grid>
             </Grid>
         </Grid>

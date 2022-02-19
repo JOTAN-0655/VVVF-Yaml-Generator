@@ -27,14 +27,7 @@ namespace VVVF_Data_Generator.Pages.Settings
         public mascon_off_setting()
         {
             InitializeComponent();
-
-            Debug.Print("Initialized");
-
-            Debug.Print(Yaml_Generation.current_data.mascon_data.accelerating.on.control_freq_go_to.ToString());
-
             Yaml_Sound_Data ysd = Yaml_Generation.current_data;
-
-            Debug.Print(Yaml_Generation.current_data.mascon_data.accelerating.on.control_freq_go_to.ToString());
 
             Accel_Mascon_On_Freq_Goto.Text = ysd.mascon_data.accelerating.on.control_freq_go_to.ToString();
             Accel_Mascon_On_Off_Div.Text = ysd.mascon_data.accelerating.on.div.ToString();
