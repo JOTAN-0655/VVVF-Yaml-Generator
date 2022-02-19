@@ -16,6 +16,7 @@
                 <Frame Name="Control_Amplitude_Default" Height="300" NavigationUIVisibility="Hidden"/>
                 <Frame x:Name="Control_Amplitude_FreeRun_On" Height="300" NavigationUIVisibility="Hidden"/>
                 <Frame x:Name="Control_Amplitude_FreeRun_Off" Height="300" NavigationUIVisibility="Hidden"/>
+                <Frame x:Name="Control_Async" Height="500" NavigationUIVisibility="Hidden"/>
             </StackPanel>
         </ScrollViewer>
 

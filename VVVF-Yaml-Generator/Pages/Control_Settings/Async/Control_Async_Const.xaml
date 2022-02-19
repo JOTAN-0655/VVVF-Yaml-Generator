@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="VVVF_Yaml_Generator.Pages.Control_Settings.Async.Control_Async_Const"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VVVF_Yaml_Generator.Pages.Control_Settings.Async"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="560">
+    <Grid>
+        <TextBox x:Name="const_box" HorizontalAlignment="Right" Margin="0,81,100,0" TextWrapping="Wrap" Text="1050" VerticalAlignment="Top" Width="223" Height="26" FontFamily="M PLUS 2 Medium" FontWeight="Bold" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="const_box_TextChanged"/>
+        <Label Content="Const Value[Hz]" HorizontalAlignment="Left" Margin="100,82,0,0" VerticalAlignment="Top" FontFamily="M PLUS 2 Medium"/>
+
+    </Grid>
+</UserControl>

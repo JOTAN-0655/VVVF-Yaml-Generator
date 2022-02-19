@@ -32,7 +32,7 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             target = ycd;
             MainWindow = mainWindow;
 
-            Control_Basic.Navigate(new Control_Basic(ycd, mainWindow));
+            Control_Basic.Navigate(new Control_Basic(ycd, mainWindow, this));
             Control_When_FreeRun.Navigate(new Control_When_FreeRun(ycd, mainWindow));
 
             Control_Amplitude_Default.Navigate(new Control_Amplitude(ycd.amplitude_control.default_data,Control_Amplitude_Content.Default, mainWindow));
@@ -42,6 +42,12 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
                 Control_Amplitude_FreeRun_On.Navigate(new Control_Amplitude(ycd.amplitude_control.free_run_data.mascon_on, Control_Amplitude_Content.Free_Run_On, mainWindow));
                 Control_Amplitude_FreeRun_Off.Navigate(new Control_Amplitude(ycd.amplitude_control.free_run_data.mascon_off, Control_Amplitude_Content.Free_Run_Off, mainWindow));
             }
+
+            if(target.pulse_Mode == Pulse_Mode.Async || target.pulse_Mode == Pulse_Mode.Async_THI)
+            {
+                Control_Async.Navigate(new Control_Async(ycd, mainWindow));
+            }
+
         }
 
         

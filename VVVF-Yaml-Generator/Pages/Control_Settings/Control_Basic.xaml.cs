@@ -26,12 +26,14 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
     {
         private Yaml_Control_Data target;
         private MainWindow MainWindow;
-        public Control_Basic(Yaml_Control_Data ycd, MainWindow mainWindow)
+        private Control_Common common;
+        public Control_Basic(Yaml_Control_Data ycd, MainWindow mainWindow, Control_Common control_Common)
         {
             InitializeComponent();
 
             target = ycd;
             MainWindow = mainWindow;
+            common = control_Common;
 
             apply_view();
         }
@@ -81,6 +83,17 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             Pulse_Mode selected = (Pulse_Mode)pulse_name_selector.SelectedItem;
             target.pulse_Mode = selected;
             MainWindow.update_Control_List_View();
+
+            if(selected == Pulse_Mode.Async || selected == Pulse_Mode.Async_THI)
+            {
+                common.Control_Async.Navigate(null);
+            }
+
+            else
+            {
+                common.Control_Async.Navigate(new Control_Async(target, MainWindow));
+            }
+                
         }
 
         private void enable_checked(object sender, RoutedEventArgs e)
