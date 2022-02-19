@@ -36,14 +36,10 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             Control_When_FreeRun.Navigate(new Control_When_FreeRun(ycd, mainWindow));
 
             Control_Amplitude_Default.Navigate(new Control_Amplitude(ycd.amplitude_control.default_data,Control_Amplitude_Content.Default, mainWindow));
-
-            if (target.when_freerun.on.stuck_at_here)
+            
+            if(ycd.amplitude_control.free_run_data != null)
             {
                 Control_Amplitude_FreeRun_On.Navigate(new Control_Amplitude(ycd.amplitude_control.free_run_data.mascon_on, Control_Amplitude_Content.Free_Run_On, mainWindow));
-            }
-
-            if (target.when_freerun.off.stuck_at_here)
-            {
                 Control_Amplitude_FreeRun_Off.Navigate(new Control_Amplitude(ycd.amplitude_control.free_run_data.mascon_off, Control_Amplitude_Content.Free_Run_Off, mainWindow));
             }
         }
