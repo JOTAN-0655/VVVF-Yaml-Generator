@@ -1,0 +1,22 @@
+﻿<Page x:Class="VVVF_Yaml_Generator.Pages.Control_Settings.Control_Common"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VVVF_Yaml_Generator.Pages.Control_Settings"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="661"
+      Title="Control_Common">
+
+    <Grid Background="White">
+        <ScrollViewer x:Name="scrollViewer">
+            <StackPanel>
+                <Frame Name="Control_Basic" Height="200" NavigationUIVisibility="Hidden"/>
+                <Frame Name="Control_When_FreeRun" Height="150" NavigationUIVisibility="Hidden"/>
+            </StackPanel>
+        </ScrollViewer>
+
+
+
+    </Grid>
+</Page>

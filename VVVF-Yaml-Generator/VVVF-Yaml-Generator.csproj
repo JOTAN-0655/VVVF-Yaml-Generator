@@ -10,15 +10,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Mplus2-Bold.ttf" />
+    <None Remove="Fonts\Mplus2-Medium.ttf" />
+    <None Remove="Fonts\Mplus2-Regular.ttf" />
     <None Remove="Images\Settings\2-level.png" />
     <None Remove="Images\Settings\3-level.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Mplus2-Bold.ttf" />
     <Content Include="vvvf-yaml-generator.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Mplus2-Medium.ttf" />
+    <Resource Include="Fonts\Mplus2-Regular.ttf" />
     <Resource Include="Images\Settings\2-level.png" />
     <Resource Include="Images\Settings\3-level.png" />
   </ItemGroup>

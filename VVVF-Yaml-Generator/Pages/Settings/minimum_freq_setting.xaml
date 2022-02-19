@@ -29,19 +29,19 @@
                     <ColumnDefinition Width="12*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1" Grid.Row="1" Background="#FF86AEFF">
-                    <Label Content="Accelerating" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontFamily="Arial Rounded MT Bold"/>
+                    <Label Content="Accelerating" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontFamily="M PLUS 2 Medium" FontWeight="Normal"/>
                 </Grid>
                 <Grid Grid.Column="2" Grid.Row="1" Background="#FF86AEFF">
-                    <Label Content="Braking" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontFamily="Arial Rounded MT Bold"/>
+                    <Label Content="Braking" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontFamily="M PLUS 2 Medium"/>
                 </Grid>
                 <Grid Grid.Column="1" Grid.Row="2" Background="White">
-                    <TextBox x:Name="accelerate_min_freq_box" HorizontalAlignment="Center" TextWrapping="Wrap" Text="2.00" VerticalAlignment="Center" Width="204" FontFamily="Arial Rounded MT Bold" FontSize="24" UndoLimit="100" TextAlignment="Center" MaxLength="10" Margin="0,0,20,0"
-                             TextChanged="textbox_value_change" Tag="Accelerate"/>
+                    <TextBox x:Name="accelerate_min_freq_box" HorizontalAlignment="Center" TextWrapping="Wrap" Text="2.00" VerticalAlignment="Center" Width="204" FontFamily="M PLUS 2 Medium" FontSize="24" UndoLimit="100" TextAlignment="Center" MaxLength="10" Margin="0,0,20,0"
+                             TextChanged="textbox_value_change" Tag="Accelerate" FontWeight="Bold"/>
                     <Label Content="Hz" HorizontalAlignment="Right" Margin="221,76,25,0" VerticalAlignment="Top"/>
                 </Grid>
                 <Grid Grid.Column="2" Grid.Row="2" Background="White">
-                    <TextBox x:Name="braking_min_freq_box" HorizontalAlignment="Center" TextWrapping="Wrap" Text="2.00" VerticalAlignment="Center" Width="204" FontFamily="Arial Rounded MT Bold" FontSize="24" UndoLimit="100" TextAlignment="Center" MaxLength="10" Margin="0,0,20,0"
-                             TextChanged="textbox_value_change" Tag="Brake"/>
+                    <TextBox x:Name="braking_min_freq_box" HorizontalAlignment="Center" TextWrapping="Wrap" Text="2.00" VerticalAlignment="Center" Width="204" FontFamily="M PLUS 2 Medium" FontSize="24" UndoLimit="100" TextAlignment="Center" MaxLength="10" Margin="0,0,20,0"
+                             TextChanged="textbox_value_change" Tag="Brake" FontWeight="Bold"/>
                     <Label Content="Hz" HorizontalAlignment="Right" Margin="0,76,25,0" VerticalAlignment="Top"/>
                 </Grid>
                 <Border BorderBrush="LightGray" BorderThickness="1" Grid.Column="1" Grid.Row="2"/>
@@ -52,7 +52,7 @@
             </Grid>
         </Grid>
         <Grid Background="#FF86AEFF">
-            <Label Content="MINIMUM FREQUENCY" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="Cascadia Mono" FontSize="22" RenderTransformOrigin="0.5,0.5">
+            <Label Content="MINIMUM FREQUENCY" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2" FontSize="24" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
