@@ -326,7 +326,7 @@ namespace VVVF_Data_Generator
                 public class Yaml_Async_Parameter_Dipolar
                 {
                     public Yaml_Async_Parameter_Dipolar_Mode value_mode { get; set; } = Yaml_Async_Parameter_Dipolar_Mode.Const;
-                    public double const_value { get; set; } = 2;
+                    public double const_value { get; set; } = -1;
                     public Yaml_Moving_Value moving_value { get; set; } = new Yaml_Moving_Value();
                     public override string ToString()
                     {

@@ -20,11 +20,12 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
     /// <summary>
     /// Page_Control_Common_Async.xaml の相互作用ロジック
     /// </summary>
-    public partial class Page_Control_Common_Async : Page
+    public partial class Level_2_Page_Control_Common_Async : Page
     {
         private Yaml_Control_Data target;
         private MainWindow MainWindow;
-        public Page_Control_Common_Async(Yaml_Control_Data ycd, MainWindow mainWindow)
+
+        public Level_2_Page_Control_Common_Async(Yaml_Control_Data ycd, MainWindow mainWindow)
         {
             InitializeComponent();
 
