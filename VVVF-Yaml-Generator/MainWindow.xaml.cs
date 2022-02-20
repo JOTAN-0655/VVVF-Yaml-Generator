@@ -105,10 +105,14 @@ namespace VVVF_Data_Generator
         {
             int selected = accelerate_settings.SelectedIndex;
             if (selected < 0) return;
-            setting_window.Navigate(new Control_Common(
-                Yaml_Generation.current_data.accelerate_pattern[selected],
-                this
-            ));
+
+            Yaml_Sound_Data ysd = Yaml_Generation.current_data;
+            var selected_data = ysd.accelerate_pattern[selected];
+            if (selected_data.pulse_Mode == Yaml_Control_Data.Pulse_Mode.Async || selected_data.pulse_Mode == Yaml_Control_Data.Pulse_Mode.Async_THI)
+                setting_window.Navigate(new Page_Control_Common_Async(selected_data, this));
+            else
+                setting_window.Navigate(new Page_Control_Common_Sync(selected_data, this));
+
         }
 
         private void brake_Click(object sender, RoutedEventArgs e)
@@ -144,16 +148,31 @@ namespace VVVF_Data_Generator
         {
             int selected = brake_settings.SelectedIndex;
             if (selected < 0) return;
-            setting_window.Navigate(new Control_Common(
-                Yaml_Generation.current_data.braking_pattern[selected],
-                this
-            ));
+
+            Yaml_Sound_Data ysd = Yaml_Generation.current_data;
+            var selected_data = ysd.braking_pattern[selected];
+            if (selected_data.pulse_Mode == Yaml_Control_Data.Pulse_Mode.Async || selected_data.pulse_Mode == Yaml_Control_Data.Pulse_Mode.Async_THI)
+                setting_window.Navigate(new Page_Control_Common_Async(selected_data, this));
+            else
+                setting_window.Navigate(new Page_Control_Common_Sync(selected_data, this));
         }
 
         public void update_Control_List_View()
         {
             accelerate_settings.Items.Refresh();
             brake_settings.Items.Refresh();
+        }
+
+        public void update_Control_Showing()
+        {
+            if (setting_tabs.SelectedIndex == 2)
+            {
+                accelerate_selected_show();
+            }
+            else if (setting_tabs.SelectedIndex == 3)
+            {
+                brake_selected_show();
+            }
         }
 
         

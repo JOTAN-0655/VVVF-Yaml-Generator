@@ -26,16 +26,18 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
     {
         private Yaml_Control_Data target;
         private MainWindow MainWindow;
-        private Control_Common common;
-        public Control_Basic(Yaml_Control_Data ycd, MainWindow mainWindow, Control_Common control_Common)
+
+        private bool no_update = true;
+        public Control_Basic(Yaml_Control_Data ycd, MainWindow mainWindow)
         {
             InitializeComponent();
 
             target = ycd;
             MainWindow = mainWindow;
-            common = control_Common;
 
             apply_view();
+
+            no_update = false;
         }
 
         private double parse(TextBox tb)
@@ -54,6 +56,8 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (no_update) return;
+
             TextBox tb = (TextBox)sender;
             Object? tag = tb.Tag;
             if (tag == null) return;
@@ -80,24 +84,21 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
 
         private void pulse_name_selector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (no_update) return;
+
             Pulse_Mode selected = (Pulse_Mode)pulse_name_selector.SelectedItem;
             target.pulse_Mode = selected;
+
             MainWindow.update_Control_List_View();
+            MainWindow.update_Control_Showing();
 
-            if(selected == Pulse_Mode.Async || selected == Pulse_Mode.Async_THI)
-            {
-                common.Control_Async.Navigate(null);
-            }
 
-            else
-            {
-                common.Control_Async.Navigate(new Control_Async(target, MainWindow));
-            }
-                
         }
 
         private void enable_checked(object sender, RoutedEventArgs e)
         {
+            if (no_update) return;
+
             CheckBox tb = (CheckBox)sender;
             Object? tag = tb.Tag;
             if (tag == null) return;

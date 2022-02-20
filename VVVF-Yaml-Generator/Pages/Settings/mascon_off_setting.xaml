@@ -74,13 +74,13 @@
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Row="2">
                                 <Grid>
-                                    <TextBox x:Name="Accel_Mascon_On_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-On-Freq" VerticalAlignment="Center" Height="22"/>
+                                    <TextBox x:Name="Accel_Mascon_On_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-On-Freq" VerticalAlignment="Center" Height="22"/>
                                     <Label Content="Hz" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Column="1" Grid.Row="2">
                                 <Grid>
-                                    <TextBox x:Name="Accel_Mascon_Off_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-Off-Freq" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="Accel_Mascon_Off_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-Off-Freq" Height="22" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
                                     <Label Content="Hz" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
@@ -96,12 +96,12 @@
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Row="4">
                                 <Grid>
-                                    <TextBox x:Name="Accel_Mascon_On_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-On-Div" Height="22" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="Accel_Mascon_On_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-On-Div" Height="22" VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Column="1" Grid.Row="4">
                                 <Grid>
-                                    <TextBox x:Name="Accel_Mascon_Off_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-Off-Div" Height="22" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="Accel_Mascon_Off_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Accel-Off-Div" Height="22" VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
 
@@ -144,13 +144,13 @@
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Row="2">
                                 <Grid>
-                                    <TextBox x:Name="Brake_Mascon_On_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-On-Freq" Height="20" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="Brake_Mascon_On_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-On-Freq" Height="20" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                                     <Label Content="Hz" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Column="1" Grid.Row="2">
                                 <Grid>
-                                    <TextBox x:Name="Brake_Mascon_Off_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-Off-Freq" Height="22" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="Brake_Mascon_Off_Freq_Goto" TextWrapping="Wrap" Text="60.0" Margin="9,0,33,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-Off-Freq" Height="22" VerticalAlignment="Center"/>
                                     <Label Content="Hz" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
                                 </Grid>
                             </Border>
@@ -166,12 +166,12 @@
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Row="4">
                                 <Grid>
-                                    <TextBox x:Name="Brake_Mascon_On_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-On-Div" Height="22" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="Brake_Mascon_On_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-On-Div" Height="22" VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
                             <Border BorderBrush="#FF969696" BorderThickness="1" Grid.Column="1" Grid.Row="4">
                                 <Grid>
-                                    <TextBox x:Name="Brake_Mascon_Off_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="Arial Rounded MT Bold" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-Off-Div" Height="22" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="Brake_Mascon_Off_Off_Div" TextWrapping="Wrap" Text="20000" Margin="9,0,9,0" FontSize="16" FontFamily="M PLUS 2 Medium" MaxLines="10" HorizontalContentAlignment="Center" TextChanged="TextBox_TextChanged" Tag="Brake-Off-Div" Height="22" VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
 

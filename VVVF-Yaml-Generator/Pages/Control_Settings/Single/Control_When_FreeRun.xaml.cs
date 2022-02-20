@@ -27,6 +27,8 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
         Yaml_Control_Data target;
         MainWindow MainWindow;
 
+        private bool no_update = true;
+
         public Control_When_FreeRun(Yaml_Control_Data ycd, MainWindow mainWindow)
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             MainWindow = mainWindow;
 
             apply_view();
+
+            no_update = false;
         }
 
         private void apply_view()
@@ -47,6 +51,8 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
+            if (no_update) return;
+
             CheckBox cb = (CheckBox)sender;
             Object? tag = cb.Tag;
             if (tag == null) return;

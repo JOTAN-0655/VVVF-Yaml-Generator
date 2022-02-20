@@ -11,7 +11,7 @@
             <ColumnDefinition Width="53*"/>
             <ColumnDefinition Width="147*"/>
         </Grid.ColumnDefinitions>
-        <TabControl Margin="10,10,16,10">
+        <TabControl x:Name="setting_tabs" Margin="10,10,16,10">
             <TabItem Header="File">
                 <Grid Background="#FFFFFFFF">
                     <Button x:Name="save_file_button" Content="Save Yaml" Tag="Save" HorizontalAlignment="Stretch" Margin="0,10,0,0" VerticalAlignment="Top" Height="28" FontFamily="M PLUS 2 Medium" FontSize="16" BorderBrush="#FF0012FF" Click="file_button_click"/>

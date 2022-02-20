@@ -33,8 +33,8 @@
             </Label>
         </Grid>
         <Grid Grid.Row="2" Background="#FF86AEFF">
-            <Button Content="2 LEVEL" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" Height="33" Width="108" Tag="2" Click="level_button_Click"/>
-            <Button Content="3 LEVEL" HorizontalAlignment="Right" VerticalAlignment="Center" Height="33" Width="108" Margin="0,0,100,0" Tag="3" Click="level_button_Click"/>
+            <Button Content="2 LEVEL" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center" Height="33" Width="108" Tag="2" Click="level_button_Click" FontFamily="M PLUS 2 Medium" FontWeight="Bold" FontSize="16"/>
+            <Button Content="3 LEVEL" HorizontalAlignment="Right" VerticalAlignment="Center" Height="33" Width="108" Margin="0,0,100,0" Tag="3" Click="level_button_Click" FontFamily="M PLUS 2 Medium" FontSize="16" FontWeight="Bold"/>
         </Grid>
 
 

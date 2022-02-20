@@ -14,22 +14,26 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VVVF_Data_Generator;
 using static VVVF_Data_Generator.Yaml_Sound_Data;
+using static VVVF_Data_Generator.Yaml_Sound_Data.Yaml_Control_Data.Yaml_Async_Parameter.Yaml_Async_Parameter_Carrier_Freq.Yaml_Async_Parameter_Carrier_Freq_Vibrato;
 
-namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async
+namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async.Vibrato
 {
     /// <summary>
-    /// Control_Async_Const.xaml の相互作用ロジック
+    /// Control_Async_Vibrato_Const.xaml の相互作用ロジック
     /// </summary>
-    public partial class Control_Async_Const : UserControl
+    /// 
+    
+    public partial class Control_Async_Vibrato_Const : UserControl
     {
-        Yaml_Control_Data target;
-        MainWindow MainWindow;
+        Yaml_Async_Parameter_Vibrato_Value target;
+        MainWindow main;
 
         bool no_update = true;
-        public Control_Async_Const(Yaml_Control_Data data, MainWindow mainWindow)
+
+        public Control_Async_Vibrato_Const(Yaml_Async_Parameter_Vibrato_Value data, MainWindow mainWindow)
         {
-            MainWindow = mainWindow;
             target = data;
+            main = mainWindow;
 
             InitializeComponent();
 
@@ -40,15 +44,15 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async
 
         private void apply_data()
         {
-            const_box.Text = target.async_data.carrier_wave_data.const_value.ToString();
+            const_box.Text = target.const_value.ToString();
         }
 
-        private double parse_d(TextBox tb)
+        private int parse_i(TextBox tb)
         {
             try
             {
                 tb.Background = new BrushConverter().ConvertFrom("#FFFFFFFF") as Brush;
-                return Double.Parse(tb.Text);
+                return Int32.Parse(tb.Text);
             }
             catch
             {
@@ -56,15 +60,13 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async
                 return -1;
             }
         }
+
         private void const_box_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (no_update) return;
-            TextBox tb = (TextBox)sender;
-            double d = parse_d(tb);
 
-            target.async_data.carrier_wave_data.const_value = d;
-
-            MainWindow.update_Control_List_View();
+            int v = parse_i((TextBox)sender);
+            target.const_value = v;
         }
     }
 }
