@@ -139,6 +139,8 @@ namespace VVVF_Data_Generator
             public enum Pulse_Mode
             {
                 Async,
+                Async_THI,
+
                 P_Wide_3,
 
                 P_1, P_2, P_3, P_4, P_5, P_6, P_7, P_8, P_9, P_10,
@@ -153,7 +155,7 @@ namespace VVVF_Data_Generator
                 SP_21, SP_23, SP_25, SP_27, SP_29, SP_31, SP_33, SP_35, SP_37, SP_39, SP_41
             , SP_43, SP_45, SP_47, SP_49, SP_51, SP_53, SP_55, SP_57, SP_59, SP_61
 
-            , Async_THI, CHMP_3, CHMP_Wide_3, CHMP_5, CHMP_Wide_5, CHMP_7, CHMP_Wide_7, CHMP_9, CHMP_Wide_9, CHMP_11, CHMP_13, CHMP_15
+            , CHMP_3, CHMP_Wide_3, CHMP_5, CHMP_Wide_5, CHMP_7, CHMP_Wide_7, CHMP_9, CHMP_Wide_9, CHMP_11, CHMP_13, CHMP_15
 
             , SHEP_3, SHEP_5, SHEP_7, SHEP_9, SHEP_11, SHEP_13, SHEP_15
             };
