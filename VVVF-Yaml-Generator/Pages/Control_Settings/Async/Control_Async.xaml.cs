@@ -17,6 +17,7 @@ using VVVF_Yaml_Generator.Pages.Control_Settings.Async;
 using VVVF_Yaml_Generator.Pages.Control_Settings.Async.Vibrato;
 using static VVVF_Data_Generator.Yaml_Sound_Data;
 using static VVVF_Data_Generator.Yaml_Sound_Data.Yaml_Control_Data.Yaml_Async_Parameter.Yaml_Async_Parameter_Carrier_Freq;
+using static VVVF_Data_Generator.Yaml_Sound_Data.Yaml_Control_Data.Yaml_Async_Parameter.Yaml_Async_Parameter_Random_Range;
 
 namespace VVVF_Yaml_Generator.Pages.Control_Settings
 {
@@ -47,34 +48,46 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             carrier_freq_mode.ItemsSource = modes;
             carrier_freq_mode.SelectedItem = data.async_data.carrier_wave_data.carrier_mode;
 
-            random_box.Text = data.async_data.random_range.ToString();
+            Yaml_Async_Parameter_Random_Range_Mode[] random_modes = (Yaml_Async_Parameter_Random_Range_Mode[])Enum.GetValues(typeof(Yaml_Async_Parameter_Random_Range_Mode));
+            random_type_selector.ItemsSource = random_modes;
+            random_type_selector.SelectedItem = data.async_data.random_range.value_mode;
 
-            show_selected(data.async_data.carrier_wave_data.carrier_mode);
+
+            show_selected_carrier_mode(data.async_data.carrier_wave_data.carrier_mode);
         }
 
-        private void carrier_freq_mode_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBox_Changed(object sender, SelectionChangedEventArgs e)
         {
             if (no_update) return;
 
-            Yaml_Async_Carrier_Mode selected = (Yaml_Async_Carrier_Mode) carrier_freq_mode.SelectedItem;
+            ComboBox cb = (ComboBox)sender;
+            Object? tag = cb.Tag;
+            if (tag == null) return;
 
-            data.async_data.carrier_wave_data.carrier_mode = selected;
-
-            show_selected(selected);
-
-
+            if (tag.Equals("Random"))
+            {
+                Yaml_Async_Parameter_Random_Range_Mode selected = (Yaml_Async_Parameter_Random_Range_Mode)random_type_selector.SelectedItem;
+                data.async_data.random_range.value_mode = selected;
+                //show_selected_carrier_mode(selected);
+            }
+            else if (tag.Equals("Param"))
+            {
+                Yaml_Async_Carrier_Mode selected = (Yaml_Async_Carrier_Mode)carrier_freq_mode.SelectedItem;
+                data.async_data.carrier_wave_data.carrier_mode = selected;
+                show_selected_carrier_mode(selected);
+            }
         }
 
-        private void show_selected(Yaml_Async_Carrier_Mode selected)
+        private void show_selected_carrier_mode(Yaml_Async_Carrier_Mode selected)
         {
             if (selected == Yaml_Async_Carrier_Mode.Const)
-                carrier_setting.Navigate(new Control_Async_Const(data, MainWindow));
+                carrier_setting.Navigate(new Control_Async_Carrier_Const(data, MainWindow));
             else if (selected == Yaml_Async_Carrier_Mode.Moving)
-                carrier_setting.Navigate(new Control_Async_Moving(data, MainWindow));
+                carrier_setting.Navigate(new Control_Async_Carrier_Moving(data, MainWindow));
             else if (selected == Yaml_Async_Carrier_Mode.Vibrato)
                 carrier_setting.Navigate(new Control_Async_Vibrato(data, MainWindow));
             else
-                carrier_setting.Navigate(new Control_Async_Table(data, MainWindow));
+                carrier_setting.Navigate(new Control_Async_Carrier_Table(data, MainWindow));
         }
 
         private int parse_i(TextBox tb)
@@ -89,15 +102,6 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
                 tb.Background = new BrushConverter().ConvertFrom("#FFfed0d0") as Brush;
                 return -1;
             }
-        }
-
-        private void random_box_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (no_update) return;
-            TextBox tb = (TextBox)sender;
-            int d = parse_i(tb);
-
-            data.async_data.random_range = d;
         }
     }
 }

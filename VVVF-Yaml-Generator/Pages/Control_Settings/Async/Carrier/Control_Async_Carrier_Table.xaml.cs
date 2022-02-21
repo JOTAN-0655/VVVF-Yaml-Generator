@@ -21,7 +21,7 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async
     /// <summary>
     /// Control_Async_Table.xaml の相互作用ロジック
     /// </summary>
-    public partial class Control_Async_Table : UserControl
+    public partial class Control_Async_Carrier_Table : UserControl
     {
         View_Data vd = new View_Data();
         public class View_Data {
@@ -29,7 +29,7 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async
         }
 
         Yaml_Control_Data target;
-        public Control_Async_Table(Yaml_Control_Data data, MainWindow mainWindow)
+        public Control_Async_Carrier_Table(Yaml_Control_Data data, MainWindow mainWindow)
         {
             InitializeComponent();
 

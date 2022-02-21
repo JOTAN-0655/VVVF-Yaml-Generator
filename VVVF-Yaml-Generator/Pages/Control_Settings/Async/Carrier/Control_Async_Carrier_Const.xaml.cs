@@ -18,30 +18,29 @@ using static VVVF_Data_Generator.Yaml_Sound_Data;
 namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async
 {
     /// <summary>
-    /// Control_Async_Moving.xaml の相互作用ロジック
+    /// Control_Async_Const.xaml の相互作用ロジック
     /// </summary>
-    public partial class Control_Async_Moving : UserControl
+    public partial class Control_Async_Carrier_Const : UserControl
     {
         Yaml_Control_Data target;
-        MainWindow main;
+        MainWindow MainWindow;
 
         bool no_update = true;
-        public Control_Async_Moving(Yaml_Control_Data data, MainWindow mainWindow)
+        public Control_Async_Carrier_Const(Yaml_Control_Data data, MainWindow mainWindow)
         {
+            MainWindow = mainWindow;
             target = data;
-            main = mainWindow;
 
             InitializeComponent();
 
             apply_data();
+
             no_update = false;
         }
 
         private void apply_data()
         {
-            var moving_val = target.async_data.carrier_wave_data.moving_value;
-
-            DataContext = moving_val;
+            const_box.Text = target.async_data.carrier_wave_data.const_value.ToString();
         }
 
         private double parse_d(TextBox tb)
@@ -57,23 +56,15 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings.Async
                 return -1;
             }
         }
-        private void text_changed(object sender, TextChangedEventArgs e)
+        private void const_box_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (no_update) return;
             TextBox tb = (TextBox)sender;
-            Object? tag = tb.Tag;
-            if (tag == null) return;
+            double d = parse_d(tb);
 
-            if (tag.Equals("start"))
-                target.async_data.carrier_wave_data.moving_value.start = parse_d(tb);
-            else if (tag.Equals("start_hz"))
-                target.async_data.carrier_wave_data.moving_value.start_value = parse_d(tb);
-            else if (tag.Equals("end"))
-                target.async_data.carrier_wave_data.moving_value.end = parse_d(tb);
-            else
-                target.async_data.carrier_wave_data.moving_value.end_value = parse_d(tb);
+            target.async_data.carrier_wave_data.const_value = d;
 
-            main.update_Control_List_View();
+            MainWindow.update_Control_List_View();
         }
     }
 }
