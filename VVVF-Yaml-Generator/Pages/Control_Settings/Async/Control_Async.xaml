@@ -25,7 +25,7 @@
                         <ColumnDefinition Width="573*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Background="#FFA5A5A5">
-                        <Label Content="Random Type" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
+                        <Label Content="Random" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
                     </Grid>
                     <Grid Grid.Column="1" Background="White" HorizontalAlignment="Stretch">
                         <ComboBox x:Name="random_type_selector" FontSize="16" FontFamily="M PLUS 2" FontWeight="Bold"  Margin="10,10,10,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_Changed" Tag="Random" />
@@ -40,7 +40,7 @@
                         <ColumnDefinition Width="573*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Background="#FFA5A5A5" VerticalAlignment="Stretch">
-                        <Label Content="Random" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
+                        <Label Content="Param" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
                     </Grid>
                     <Grid Grid.Column="1" Background="White" HorizontalAlignment="Stretch">
                         <Frame x:Name="random_setting" />
@@ -55,7 +55,7 @@
                         <ColumnDefinition Width="573*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Background="#FFA5A5A5">
-                        <Label Content="Param Type" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
+                        <Label Content="Carrier" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="M PLUS 2 Medium" FontWeight="Bold" Foreground="White" FontSize="14"/>
                     </Grid>
                     <Grid Grid.Column="1" Background="White" HorizontalAlignment="Stretch">
                         <ComboBox x:Name="carrier_freq_mode" FontSize="16" FontFamily="M PLUS 2" FontWeight="Bold"  Margin="10,10,10,10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_Changed" Tag="Param" />

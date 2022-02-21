@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VVVF_Data_Generator;
 using VVVF_Yaml_Generator.Pages.Control_Settings.Async;
+using VVVF_Yaml_Generator.Pages.Control_Settings.Async.Random_Range;
 using VVVF_Yaml_Generator.Pages.Control_Settings.Async.Vibrato;
 using static VVVF_Data_Generator.Yaml_Sound_Data;
 using static VVVF_Data_Generator.Yaml_Sound_Data.Yaml_Control_Data.Yaml_Async_Parameter.Yaml_Async_Parameter_Carrier_Freq;
@@ -54,6 +55,7 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
 
 
             show_selected_carrier_mode(data.async_data.carrier_wave_data.carrier_mode);
+            show_random_mode(data.async_data.random_range.value_mode);
         }
 
         private void ComboBox_Changed(object sender, SelectionChangedEventArgs e)
@@ -68,7 +70,7 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             {
                 Yaml_Async_Parameter_Random_Range_Mode selected = (Yaml_Async_Parameter_Random_Range_Mode)random_type_selector.SelectedItem;
                 data.async_data.random_range.value_mode = selected;
-                //show_selected_carrier_mode(selected);
+                show_random_mode(selected);
             }
             else if (tag.Equals("Param"))
             {
@@ -88,6 +90,14 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
                 carrier_setting.Navigate(new Control_Async_Vibrato(data, MainWindow));
             else
                 carrier_setting.Navigate(new Control_Async_Carrier_Table(data, MainWindow));
+        }
+
+        private void show_random_mode(Yaml_Async_Parameter_Random_Range_Mode selected)
+        {
+            if (selected == Yaml_Async_Parameter_Random_Range_Mode.Const)
+                random_setting.Navigate(new Control_Async_Random_Const(data, MainWindow));
+            else if (selected == Yaml_Async_Parameter_Random_Range_Mode.Moving)
+                random_setting.Navigate(new Control_Async_Random_Moving(data, MainWindow));
         }
 
         private int parse_i(TextBox tb)
