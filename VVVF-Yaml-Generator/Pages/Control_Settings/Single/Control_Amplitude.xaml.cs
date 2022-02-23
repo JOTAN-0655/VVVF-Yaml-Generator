@@ -238,9 +238,9 @@ namespace VVVF_Yaml_Generator.Pages.Control_Settings
             if (cac == Control_Amplitude_Content.Default)
                 condition_2 = new Boolean[9] { true, true, true, true, true, true, true, true, true };
             else if(cac == Control_Amplitude_Content.Free_Run_On)
-                condition_2 = new Boolean[9] { true, true, false, false, true, true, true, true, true };
+                condition_2 = new Boolean[9] { true, true, true, true, true, true, true, true, true };
             else
-                condition_2 = new Boolean[9] { true, true, false, false, true, true, true, true, true };
+                condition_2 = new Boolean[9] { true, true, true, true, true, true, true, true, true };
 
             for(int i =0; i < 9; i++)
             {
