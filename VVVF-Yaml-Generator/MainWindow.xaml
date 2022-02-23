@@ -47,6 +47,11 @@
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="表示をソート" Click="MenuItem_Click" Tag="accelerate.sort"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
                     </ListView>
 
 
@@ -73,6 +78,11 @@
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="表示をソート" Click="MenuItem_Click" Tag="brake.sort"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
                     </ListView>
 
 

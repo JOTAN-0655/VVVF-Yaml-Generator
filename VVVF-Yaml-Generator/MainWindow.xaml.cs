@@ -198,6 +198,31 @@ namespace VVVF_Data_Generator
             }
         }
 
-        
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem mi = (MenuItem)sender;
+            Object? tag = mi.Tag;
+            if (tag == null) return;
+            String? tag_str = tag.ToString();
+            if (tag_str == null) return;
+            String[] command = tag_str.Split(".");
+            if (command[0].Equals("brake"))
+            {
+                if (command[1].Equals("sort"))
+                {
+                    Yaml_Generation.current_data.braking_pattern.Sort((a, b) => Math.Sign(b.from - a.from));
+                    update_Control_List_View();
+                    brake_selected_show();
+                }
+            }else if (command[0].Equals("accelerate"))
+            {
+                if (command[1].Equals("sort"))
+                {
+                    Yaml_Generation.current_data.accelerate_pattern.Sort((a, b) => Math.Sign(b.from - a.from));
+                    update_Control_List_View();
+                    accelerate_selected_show();
+                }
+            }
+        }
     }
 }
