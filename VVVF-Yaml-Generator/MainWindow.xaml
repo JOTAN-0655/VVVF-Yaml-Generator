@@ -49,7 +49,7 @@
                         </ListView.ItemTemplate>
                         <ListView.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="表示をソート" Click="MenuItem_Click" Tag="accelerate.sort"/>
+                                <MenuItem Header="Sort" Click="MenuItem_Click" Tag="accelerate.sort"/>
                             </ContextMenu>
                         </ListView.ContextMenu>
                     </ListView>
@@ -80,7 +80,7 @@
                         </ListView.ItemTemplate>
                         <ListView.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="表示をソート" Click="MenuItem_Click" Tag="brake.sort"/>
+                                <MenuItem Header="Sort" Click="MenuItem_Click" Tag="brake.sort"/>
                             </ContextMenu>
                         </ListView.ContextMenu>
                     </ListView>
